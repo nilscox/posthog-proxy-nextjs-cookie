@@ -8,6 +8,7 @@ import { useEffect } from "react";
 if (typeof window !== "undefined") {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY as string, {
     api_host: "/ingest",
+    persistence: "localStorage",
   });
 }
 
