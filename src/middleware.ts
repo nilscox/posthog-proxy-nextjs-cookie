@@ -12,6 +12,8 @@ export function middleware(request: NextRequest) {
   url.port = "443";
   url.pathname = url.pathname.replace(/^\/ingest/, "");
 
+  requestHeaders.delete("cookie");
+
   const cookie = requestHeaders.get("cookie");
 
   if (cookie) {
